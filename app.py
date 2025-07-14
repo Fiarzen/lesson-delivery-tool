@@ -1,9 +1,14 @@
 from flask import Flask, render_template, send_from_directory
 from models import db, Course, Module, Lesson
+from config import Config
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///courses.db'
+app.config.from_object(Config)
 db.init_app(app)
+
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 @app.route('/')
 def home():
