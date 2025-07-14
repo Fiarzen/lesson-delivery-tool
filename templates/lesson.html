@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}{{ lesson.title }}{% endblock %}
+{% block content %}
+  <h2>{{ lesson.title }}</h2>
+  <p>{{ lesson.description }}</p>
+  <iframe width="560" height="315" src="{{ lesson.youtube_url }}" frameborder="0" allowfullscreen></iframe>
+  <p><a href="{{ url_for('download_pdf', filename=lesson.pdf_filename) }}">Download PDF</a></p>
+{% endblock %}
