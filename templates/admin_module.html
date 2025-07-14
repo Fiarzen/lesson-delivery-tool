@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add New Module</h2>
+<form method="post">
+  {{ form.hidden_tag() }}
+  {{ form.title.label }} {{ form.title() }}<br>
+  {{ form.course_id.label }} {{ form.course_id() }}<br>
+  {{ form.submit() }}
+</form>
+<a href="{{ url_for('admin') }}">Back to Admin</a>
+{% endblock %}

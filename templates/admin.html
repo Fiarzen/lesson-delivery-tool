@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Panel</h2>
+<ul>
+  <li><a href="{{ url_for('admin_course') }}">Add Course</a></li>
+  <li><a href="{{ url_for('admin_module') }}">Add Module</a></li>
+  <li><a href="{{ url_for('admin_lesson') }}">Add Lesson</a></li>
+</ul>
+{% endblock %}

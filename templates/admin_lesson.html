@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add New Lesson</h2>
+<form method="post" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  {{ form.title.label }} {{ form.title() }}<br>
+  {{ form.description.label }} {{ form.description() }}<br>
+  {{ form.youtube_url.label }} {{ form.youtube_url() }}<br>
+  {{ form.module_id.label }} {{ form.module_id() }}<br>
+  {{ form.pdf_file.label }} {{ form.pdf_file() }}<br>
+  {{ form.submit() }}
+</form>
+<a href="{{ url_for('admin') }}">Back to Admin</a>
+{% endblock %}
